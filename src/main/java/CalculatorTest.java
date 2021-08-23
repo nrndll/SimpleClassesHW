@@ -3,32 +3,26 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class CalculatorTest {
-    Calculator calculator;
-
-    @Before
-    public void before(){
-        calculator = new Calculator(4, 4, 32.4, 16.5);
-    }
+    Calculator calculator = new Calculator();
 
     @Test
     public void canAdd(){
-        assertEquals(8, calculator.add());
+        assertEquals(4, calculator.add(2, 2));
     }
 
     @Test
     public void canSubtract(){
-        assertEquals(0, calculator.subtract());
+        assertEquals(0, calculator.subtract(2, 2));
     }
 
     @Test
     public void canMultiply(){
-        assertEquals(16, calculator.multiply());
+        assertEquals(16, calculator.multiply(4, 4));
     }
 
     @Test
     public void canDivide(){
-        calculator = new Calculator(1, 1, 32.4, 16.5);
-        assertEquals(1.96, calculator.divide(), 0.1);
+        assertEquals(7.8, calculator.divide(39, 5), 0.01);
     }
-
 }
+
