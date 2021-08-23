@@ -3,11 +3,16 @@ import static org.junit.Assert.assertEquals;
 
 public class PrinterTest {
 
-    Printer printer = new Printer(100);
+    Printer printer = new Printer(100, 50);
 
     @Test
     public void hasSheets(){
         assertEquals(100, printer.getSheets());
+    }
+
+    @Test
+    public void hasToner(){
+        assertEquals(50, printer.getToner());
     }
 
     @Test
@@ -23,8 +28,15 @@ public class PrinterTest {
 
     @Test
     public void cannotPrintIfNotEnoughSheets(){
-        printer = new Printer(1);
+        printer = new Printer(1, 50);
         assertEquals(false, printer.print(3,4));
         assertEquals(1, printer.getSheets());
+    }
+
+    @Test
+    public void tonerReducesBy1ForEachPagePrinted(){
+        printer = new Printer(100, 50);
+        printer.print(3, 4);
+        assertEquals(38, printer.getToner());
     }
 }
