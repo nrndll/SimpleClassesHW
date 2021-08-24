@@ -35,6 +35,7 @@ public class PrinterTest {
     @Test
     public void cannotPrintIfNotEnoughSheets(){
         printer = new Printer(1, 50);
+        printer.print(3, 4);
 //        assertEquals(false, printer.print(3,4));
         assertEquals(1, printer.getSheets());
     }
