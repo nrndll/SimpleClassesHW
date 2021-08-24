@@ -15,13 +15,21 @@ public class Printer {
         return this.toner;
     }
 
-    public boolean print(int pages, int copies){
+//    public boolean print(int pages, int copies){
+//        int sheetsToPrint = pages * copies;
+//        if(this.sheets >= sheetsToPrint){
+//            this.sheets -= sheetsToPrint;
+//            this.toner -= sheetsToPrint;
+//            return true;
+//        }
+//        return false;
+//    }
+
+    public void print(int pages, int copies){
         int sheetsToPrint = pages * copies;
         if(this.sheets >= sheetsToPrint){
             this.sheets -= sheetsToPrint;
             this.toner -= sheetsToPrint;
-            return true;
         }
-        return false;
     }
 }
