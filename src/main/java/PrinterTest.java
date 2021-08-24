@@ -41,7 +41,6 @@ public class PrinterTest {
 
     @Test
     public void tonerReducesBy1ForEachPagePrinted(){
-        printer = new Printer(100, 50);
         printer.print(3, 4);
         assertEquals(38, printer.getToner());
     }
