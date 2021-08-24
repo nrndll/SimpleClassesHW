@@ -1,9 +1,15 @@
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class PrinterTest {
 
-    Printer printer = new Printer(100, 50);
+    private Printer printer;
+
+    @Before
+    public void setup(){
+        printer = new Printer(100, 50);
+    }
 
     @Test
     public void hasSheets(){

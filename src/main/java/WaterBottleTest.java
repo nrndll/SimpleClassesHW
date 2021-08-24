@@ -1,9 +1,16 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class WaterBottleTest {
-    WaterBottle waterbottle = new WaterBottle(100);
+
+    private WaterBottle waterbottle;
+
+    @Before
+    public void before(){
+        waterbottle = new WaterBottle(100);
+    }
 
     @Test
     public void hasVolume(){
